@@ -28,35 +28,30 @@ Dynamic UI Updates: The application updates the displayed weather data dynamical
 - **Lodash:** For implementing debounced search functionality.
 - **PropTypes:** For type-checking props in React components.
   
-How to Run
+## How to Run
 To run the application locally, follow these steps:
 
-Clone the repository:
-
-bash
-Copy code
+1.Clone the repository:
 git clone https://github.com/yourusername/weather-app.git
 cd weather-app
-Install dependencies:
 
-bash
-Copy code
+2. Install dependencies:
 npm install
-Start the application:
 
-bash
-Copy code
+3.Start the application:
 npm start
+
 The application should be available on http://localhost:3000.
 
-Structure Overview
+## Structure Overview
 The project is structured into several components, each responsible for different parts of the application:
 
-App.js: The main component that manages state and renders the search input and city cards.
-CityCard.js: A component that displays individual city weather information.
-UpdatedCityCard.js: A component that shows detailed weather information when a city is selected.
-App.css: The main stylesheet for styling the application.
-Component Details
-App Component: Handles user input and API requests, manages error states, and conditionally renders components based on user interactions.
-CityCard Component: Displays basic weather information for each city, such as name, temperature, and weather description.
-UpdatedCityCard Component: Displays comprehensive weather details, including temperature, humidity, wind speed, and additional meteorological data, with dynamic background colors based on the temperature.
+- **App.js:** The main component that manages state and renders the search input and city cards.
+- **CityCard.js:** A component that displays individual city weather information.
+- **UpdatedCityCard.js:** A component that shows detailed weather information when a city is selected.
+- **App.css:** The main stylesheet for styling the application.
+  
+### Component Details
+- **App Component:** Handles user input and API requests, manages error states, and conditionally renders components based on user interactions.
+- **CityCard Component:** Displays basic weather information for each city, such as name, temperature, and weather description.
+- **UpdatedCityCard Component:** Displays comprehensive weather details, including temperature, humidity, wind speed, and additional meteorological data, with dynamic background colors based on the temperature.
