@@ -5,13 +5,11 @@ import {useEffect, useState} from 'react';
 const CityCard = ({ city, onClick }) => {
 
     return(
-        <div className="city-card">
-            <button className="next-card" onClick={() => onClick(city)}>
+            <div className="city-card" onClick={() => onClick(city)}>
                 <h2>{city.name}, {city.sys?.country} </h2>
-            </button>
-            <p>Temperature: {city.main?.temp}°C</p>
-            <p>Weather: {city.weather?.[0]?.description}</p>
-        </div>
+                <p>Temperature: {city.main?.temp}°C</p>
+                <p>Weather: {city.weather?.[0]?.description}</p>
+            </div>
     )
 }
 
@@ -33,12 +31,4 @@ CityCard.propTypes = {
     onClick: PropTypes.func.isRequired
 };
 
-CityCard.defaultProps = {
-    city: {
-        name: 'Unknown City',
-        sys: { country: 'Unknown Country' },
-        main: { temp: 0 },
-        weather: [{ description: 'No description' }]
-    }
-};
 export default CityCard;

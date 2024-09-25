@@ -18,8 +18,10 @@ const App = () => {
     const [error, setError] = useState('');
 
     const searchCities = async(cityName) => {
+        if(!cityName) return;
+
         try {
-            setError('');
+            setError(null);
             const response = await fetch(`${base_url}/find?q=${cityName}&units=metric&appid=${api_key}`);
             const data = await response.json();
 
@@ -42,12 +44,7 @@ const App = () => {
     }, 500);
 
     useEffect(() => {
-            if(search){
                 debouncedSearchCities(search);
-            } else {
-                setCities([]);
-                setError('');
-            }
     },[search]);
 
     const handleCityClick = (city) => {
@@ -85,7 +82,11 @@ const App = () => {
                             ))
                         ) : (
                             <div className="empty">
-                                <h2>No cities found</h2>
+                                {error ? (
+                                    <h2>{error}</h2>
+                                ) : (
+                                    <h2>No cities found</h2>
+                                )}
                             </div>
                         )}
                     </div>

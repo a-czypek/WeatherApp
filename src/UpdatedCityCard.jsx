@@ -7,21 +7,20 @@ const UpdatedCityCard = ({city, onBack}) => {
     const [bgColor, setBgColor] = useState('');
 
     useEffect(() => {
-        // Ustaw kolor tła w zależności od temperatury
         if (city.main?.temp) {
             const temp = city.main.temp;
             let color;
 
             if (temp <= 5) {
-                color = '#7ab3f8'; // Niebieski dla temperatur poniżej 0°C
+                color = '#7ab3f8';
             } else if (temp > 5 && temp <= 15) {
-                color = '#0ff'; // Jasnoniebieski dla temperatur od 0°C do 15°C
+                color = '#0ff';
             } else if (temp > 15 && temp <= 25) {
-                color = '#91fa91'; // Zielony dla temperatur od 15°C do 25°C
+                color = '#91fa91';
             } else if (temp > 25 && temp <= 35) {
-                color = '#fafa83'; // Żółty dla temperatur od 25°C do 35°C
+                color = '#fafa83';
             } else {
-                color = '#ff7777'; // Czerwony dla temperatur powyżej 35°C
+                color = '#ff7777';
             }
 
             setBgColor(color);
@@ -33,38 +32,28 @@ const UpdatedCityCard = ({city, onBack}) => {
             <p className="coord">{city.coord.lat}°, {city.coord.lon}°</p>
             <p className="temp">{city.main?.temp}°C</p>
             <p className="weather">{city.weather?.[0]?.description}</p>
+
             <div className="info-box-container">
                 <div className="info-box">
-                    <p className="temp-min-max"><span className="main-text">Min/Max Temp:</span>
-                        <br/>
-                        <span className="text-card">{city.main?.temp_min}°C/{city.main?.temp_max}°C</span></p>
+                    <p><strong>Min/Max Temp:</strong> {city.main?.temp_min}°C / {city.main?.temp_max}°C</p>
                 </div>
                 <div className="info-box">
-                    <p> <span className="main-text">Wind:</span>
-                        <br/>
-                        <span className="text-card"> {city.wind?.speed} , {city.wind.deg}°</span></p>
+                    <p><strong>Wind:</strong> {city.wind?.speed} m/s, {city.wind?.deg}°</p>
                 </div>
                 <div className="info-box">
-                    <p> <span className="main-text">Feels like:</span>
-                        <br/>
-                        <span className="text-card">{city.main?.feels_like}°C</span></p>
+                    <p><strong>Feels Like:</strong> {city.main?.feels_like}°C</p>
                 </div>
                 <div className="info-box">
-                    <p> <span className="main-text">Atmospheric pressure:</span>
-                        <br/>
-                        <span className="text-card">{city.main?.pressure}hPa</span></p>
+                    <p><strong>Pressure:</strong> {city.main?.pressure} hPa</p>
                 </div>
                 <div className="info-box">
-                    <p> <span className="main-text">Humidity level:</span>
-                        <br/>
-                        <span className="text-card">{city.main?.humidity}%</span></p>
+                    <p><strong>Humidity:</strong> {city.main?.humidity}%</p>
                 </div>
                 <div className="info-box">
-                    <p><span className="main-text">Cloud cover:</span>
-                        <br/>
-                        <span className="text-card">{city.clouds.all}%</span></p>
+                    <p><strong>Cloud Cover:</strong> {city.clouds?.all}%</p>
                 </div>
             </div>
+
             <button onClick={onBack} className="back-button">Back to City Card</button>
         </div>
 
@@ -102,22 +91,4 @@ UpdatedCityCard.propTypes = {
     onBack: PropTypes.func.isRequired
 };
 
-UpdatedCityCard.defaultProps = {
-    city: {
-        name: 'Unknown City',
-        coord: { lat: 0, lon: 0 },
-        main: {
-            temp: 0,
-            temp_min: 0,
-            temp_max: 0,
-            feels_like: 0,
-            pressure: 0,
-            humidity: 0
-        },
-        weather: [{ description: 'No description' }],
-        wind: { speed: 0, deg: 0 },
-        clouds: { all: 0 }
-    },
-    onBack: () => {}
-};
 export default UpdatedCityCard;
