@@ -29,6 +29,7 @@ To run the application locally, follow these steps:
 1.Clone the repository:
 
 git clone https://github.com/yourusername/weather-app.git
+
 cd weather-app
 
 2.Install dependencies:
