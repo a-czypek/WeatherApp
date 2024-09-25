@@ -1,4 +1,3 @@
-
 # Weather Application
 This project is an implementation of a weather application that allows users to search for cities and view their current weather conditions. The application utilizes the OpenWeatherMap API to fetch real-time weather data and displays it in a user-friendly interface built with React.
 
@@ -32,7 +31,12 @@ Dynamic UI Updates: The application updates the displayed weather data dynamical
 - **Lodash:** For implementing debounced search functionality.
 - **PropTypes:** For type-checking props in React components.
 
-  	
+## Examples
+
+![image](https://github.com/user-attachments/assets/85e85133-baf9-4a54-b075-2c706a03630e)
+  
+![image](https://github.com/user-attachments/assets/aedf7a21-91a7-4751-85dd-57d88466c3ae)
+
 ## How to Run
 To run the application locally, follow these steps:
 
