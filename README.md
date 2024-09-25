@@ -27,13 +27,16 @@ Dynamic UI Updates: The application updates the displayed weather data dynamical
 To run the application locally, follow these steps:
 
 1.Clone the repository:
+
 git clone https://github.com/yourusername/weather-app.git
 cd weather-app
 
-2. Install dependencies:
+2.Install dependencies:
+
 npm install
 
 3.Start the application:
+
 npm start
 
 The application should be available on http://localhost:3000.
