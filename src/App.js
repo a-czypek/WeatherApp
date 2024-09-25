@@ -30,7 +30,6 @@ const App = () => {
             }
             else{
                 setCities([]);
-                setError('No city found');
             }
         }
         catch (e) {

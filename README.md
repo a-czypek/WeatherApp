@@ -1,3 +1,4 @@
+
 # Weather Application
 This project is an implementation of a weather application that allows users to search for cities and view their current weather conditions. The application utilizes the OpenWeatherMap API to fetch real-time weather data and displays it in a user-friendly interface built with React.
 
